@@ -42,6 +42,34 @@ func createData(db *gorm.DB) {
 			Salary : 3,
 			DeptNo : 2,
 		},
+		Employee{
+			Ename : "mukta",
+			Job : "barve",
+			Mgr : "hellp planntet",
+			Salary : 3,
+			DeptNo : 1,
+		},
+			Employee{
+			Ename : "ankit",
+			Job : "gupta",
+			Mgr : "wolrd hello",
+			Salary : 3,
+			DeptNo : 2,
+		},
+		Employee{
+			Ename : "naina",
+			Job : "da kasoor",
+			Mgr : "andhadoon",
+			Salary : 3,
+			DeptNo : 1,
+		},
+		Employee{
+			Ename : "kabir",
+			Job : "singh",
+			Mgr : "hmm wolrd",
+			Salary : 3,
+			DeptNo : 2,
+		},
 	}
 
 	var dept[] Department = []Department {
@@ -62,47 +90,10 @@ func createData(db *gorm.DB) {
 	if err := db.Debug().Create(&dept[1]); err.Error!= nil{
 		panic(err.Error)
 	}
-	if err := db.Debug().Create(&emp[0]); err.Error != nil{
-		panic(err.Error)
-	}
-	if err := db.Debug().Create(&emp[1]); err.Error != nil{
-		panic(err.Error)
-	}
-	if err := db.Debug().Create(&Employee{
-		Ename : "mukta",
-		Job : "barve",
-		Mgr : "hellp planntet",
-		Salary : 3,
-		DeptNo : 1,
-	}); err.Error != nil{
-		panic(err.Error)
-	}
-	if err := db.Debug().Create(&Employee{
-		Ename : "ankit",
-		Job : "gupta",
-		Mgr : "wolrd hello",
-		Salary : 3,
-		DeptNo : 2,
-	}); err.Error != nil{
-		panic(err.Error)
-	}
-	if err := db.Debug().Create(&Employee{
-		Ename : "naina",
-		Job : "da kasoor",
-		Mgr : "andhadoon",
-		Salary : 3,
-		DeptNo : 1,
-	}); err.Error != nil{
-		panic(err.Error)
-	}
-	if err := db.Debug().Create(&Employee{
-		Ename : "kabir",
-		Job : "singh",
-		Mgr : "hmm wolrd",
-		Salary : 3,
-		DeptNo : 2,
-	}); err.Error != nil{
-		panic(err.Error)
+	for _ , employee := range emp {
+		if err := db.Debug().Create(&employee); err.Error != nil{
+			panic(err.Error)
+		}
 	}
 } 
 
